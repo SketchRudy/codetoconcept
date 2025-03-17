@@ -164,35 +164,79 @@ display: block;
 margin: 20px auto; 
 border-radius: 10px; 
 }
+.best-practices {
+font-family: 'Montserrat', sans-serif;
+color: #fff;                           
+line-height: 1.6;
+margin-bottom: 2rem;                   
+}
+
+/* Remove default numbers, set up custom counters */
+.best-practices ol {
+list-style: none;
+counter-reset: item;
+margin: 0;
+padding: 0;
+}
+
+.best-practices ol > li {
+counter-increment: item;
+margin-bottom: 1rem;     
+position: relative;         
+padding-left: 1.5rem;       
+}
+
+.best-practices ol > li::before {
+content: counter(item) ". ";
+position: absolute;
+left: 0;
+color: #e74c3c;         
+font-weight: bold;
+}
+
+.best-practices li ul {
+list-style-type: disc;      
+margin: 0.5rem 0 0 1.5rem;  
+color: #ccc;                
+}
+
+.best-practices li ul li {
+margin-bottom: 0.5rem;
+}
 
 a.button {
-    display: inline-block;
-    background-color: #000; 
-    color: #fff;            
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;    
-    /* Aura glow effect applied by default */
-    box-shadow: 0 0 8px rgba(231, 76, 60, 0.6), 0 0 16px rgba(231, 76, 60, 0.4);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-  }
-  
-  a.button:hover {
-    /* Intensified aura glow on hover */
-    box-shadow: 0 0 12px rgba(231, 76, 60, 0.8), 0 0 24px rgba(231, 76, 60, 0.6);
-    transform: translateY(-2px);
-  }
-  
-  a.button:active {
-    /* Slightly reduced glow when pressed */
-    box-shadow: 0 0 6px rgba(231, 76, 60, 0.8), 0 0 12px rgba(231, 76, 60, 0.6);
-    transform: translateY(0);
-  }
-  
+display: inline-block;
+background-color: #000; 
+color: #fff;            
+padding: 12px 24px;
+font-size: 16px;
+font-weight: bold;
+text-decoration: none;
+border: none;
+border-radius: 4px;    
+box-shadow: 0 0 8px rgba(231, 76, 60, 0.6), 0 0 16px rgba(231, 76, 60, 0.4);
+transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
 
+a.button:hover {
+box-shadow: 0 0 12px rgba(231, 76, 60, 0.8), 0 0 24px rgba(231, 76, 60, 0.6);
+transform: translateY(-2px);
+}
+
+a.button:active {
+/* Slightly reduced glow when pressed */
+box-shadow: 0 0 6px rgba(231, 76, 60, 0.8), 0 0 12px rgba(231, 76, 60, 0.6);
+transform: translateY(0);
+}
+
+.uxui {
+    width: 60%; 
+    max-width: 500px;
+    height: auto;
+    display: block; 
+    margin: 20px auto; 
+    border-radius: 10px; 
+    }
 
 footer {
 background-color: var(--accent-color);
@@ -222,23 +266,23 @@ background-color: #d32f2f;
 
 @media (max-width: 768px) {
 .hero h1 {
-    font-size: 3em;
+font-size: 3em;
 }
 .hero p {
-    font-size: 1.4em;
+font-size: 1.4em;
 }
 .btn {
-    padding: 10px 20px;
-    font-size: 1em;
+padding: 10px 20px;
+font-size: 1em;
 }
 .container {
-    grid-template-columns: 1fr;
-    padding: 20px;
+grid-template-columns: 1fr;
+padding: 20px;
 }
 #toc {
-    position: relative;
-    height: auto;
-    box-shadow: none;
-    padding: 20px;
+position: relative;
+height: auto;
+box-shadow: none;
+padding: 20px;
 }
 }
